@@ -1,0 +1,20 @@
+factorial:
+R1 = M[SP + 4]
+BEQ R1, 1, PC + 32
+SP = SP - 4
+M[SP] = R1 - 1
+CALL <factorial>
+SP = SP + 4
+R2 = R1 * RV
+RV = R2
+JUMP PC + 8
+RV = 1
+RET
+
+main:
+SP = SP - 4
+R1 = 10
+M[SP] = 10
+CALL <factorial>
+SP = SP + 4
+RET

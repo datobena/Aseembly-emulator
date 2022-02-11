@@ -1,0 +1,23 @@
+bin:
+R1 = M[SP + 4]
+BLE R1, 1, PC + 24
+SP = SP - 4
+M[SP] = R1 / 2
+CALL <bin>
+SP = SP + 4
+JUMP PC + 12
+RV = 1
+RET
+R2 = RV * 10
+R3 = R1 / 2
+R4 = R3 * 2
+R5 = R1 - R4
+RV = R2 + R5
+RET
+main:
+SP = SP - 4
+R1 = 10
+M[SP] = 371
+CALL <bin>
+SP = SP + 4
+RET

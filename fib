@@ -1,0 +1,21 @@
+fib:
+R1 = M[SP + 4]
+BLT R1, 2, PC + 40
+SP = SP - 4
+M[SP] = R1 - 1
+CALL <fib>
+R2 = RV
+M[SP] = R1 - 2
+CALL <fib>
+RV = RV + R2
+SP = SP + 4
+RET
+RV = R1
+RET
+
+main:
+SP = SP - 4
+M[SP] = 19
+CALL <fib>
+SP = SP + 4
+RET

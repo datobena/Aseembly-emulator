@@ -1,0 +1,28 @@
+main:
+SP = SP - 15
+M[SP] = .1 1
+M[SP + 1] = .1 2
+M[SP + 2] = .1 3
+M[SP + 3] = .1 4
+M[SP + 4] = .1 5
+M[SP + 5] = .1 6
+M[SP + 6] = .1 7
+M[SP + 7] = .1 8
+M[SP + 8] = .1 9
+M[SP + 9] = .1 10
+M[SP + 10] = .1 11
+M[SP + 11] = .1 12
+M[SP + 12] = .1 13
+M[SP + 13] = .1 14
+M[SP + 14] = .1 0
+CALL <strlen>
+SP = SP + 15
+SP = SP - 7
+R1 = RV / 3
+M[SP] = .1 37
+M[SP + 1] = .1 100
+M[SP + 2] = .1 0
+M[SP + 3] = R1
+CALL <printf>
+SP = SP + 7
+RET
